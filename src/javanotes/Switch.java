@@ -14,7 +14,6 @@ public class Switch {
 
     public static void main(String[] args) {
         menu();
-        printProduct();
 
     }
     public static void  createProduct(){
@@ -38,6 +37,7 @@ public class Switch {
         System.out.println("precio ");
         price = calculatePrice(profit, cost);
         product[4] = Double.toString(price);
+        System.out.println(price);
     }
 
     public static double calculatePrice(float profit, double cost){
