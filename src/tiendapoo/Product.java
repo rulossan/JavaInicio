@@ -1,22 +1,22 @@
-package javanotes;
+package tiendapoo;
 
 import java.util.Scanner;
 
-public class Switch {
+public class Product {
 
-    static int productId;
-    static String productName;
-    static double cost;
-    static float profit;
-    static double price;
+    // Atributos
+     int productId;
+     String productName;
+     double cost;
+     float profit;
+     double price;
 
-    static Scanner sc = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
 
-    public static void main(String[] args) {
-        menu();
 
-    }
-    public static void  createProduct(){
+     //Comportamientos
+
+    public void  createProduct(){
         String [] tags ={"Id", "ProductName", "Cost","Profit", "Price"};
         String [] product = new String[5];
 
@@ -50,39 +50,15 @@ public class Switch {
         }
     }
 
-    public static double calculatePrice(float profit, double cost){
+    public double calculatePrice(float profit, double cost){
 
         double price = cost/(1-(profit/100));
         return price;
     }
-    public  static void  printProduct(){
+    public  void  printProduct(){
 
         System.out.println("id " + productId + "\n" +
                 "nombre producto " + productName + "\n" +
                 "precio " + price);
-    }
-
-    public static void menu(){
-
-        System.out.println("Selecione 1. Crear producto" + " "+
-                "2.ver producto");
-
-        int opc = sc.nextInt();
-
-        switch (opc){
-            case 1:
-                System.out.println("Crear producto: ");
-                createProduct();;
-                break;
-
-            case 2:
-                System.out.println("Ver producto: ");
-                printProduct();
-                break;
-
-            default:
-                System.out.println("Ingrese una opcion valida");
-        }
-
     }
 }
